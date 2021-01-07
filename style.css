@@ -1,0 +1,192 @@
+/* Importação de fonte */
+@import url('https://fonts.googleapis.com/css?family=Poppins:200,300,400,500,600,700,800,900&display=swap');
+
+/* Zerando ELEMENTOS */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif; /*Usando a fonte Poppins em todos os ELEMENTOS*/
+}
+
+section { /*Este é o CONTAINER é aqui que vamos por o "display: flex"*/
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  padding: 100px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #fff;
+}
+
+header {
+  position: absolute; /*Ok header está ABSOLUTE ao SECTION*/
+  top: 0; /* Com este TOP irá poder se Locomover respeitando o PAI "section" a altura a largura do pai */
+  left: 0;
+  width: 100%;
+  padding: 20px 100px;
+  display: flex;/* Aqui os ELEMENTOS ficam em ROW pois este HEADER é o CONTAINER */
+  justify-content: space-between;
+  align-items: center;
+
+}
+
+/* Estilizando apenas a LOGO */
+header .logo {
+  position: relative;
+  max-width: 80px;
+}
+
+header ul { /* UL é o CONTAINER dos LINKS */
+  position: relative;
+  display: flex; /* Fazendo com que os LINKS fiquem em ROW */
+}
+
+header ul li {
+  list-style: none;
+}
+
+header ul li a {
+  display: inline-block;
+  color: #333;
+  font-weight: 400;
+  margin-left: 40px;
+  text-decoration: none;
+  position: relative;
+}
+
+header ul li a::after { /* Estou utilizando o PSEUDO-ELEMENT ::after */
+  content: "";
+  width: 0%;
+  height: 0%;
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  background-color: #017143;
+  border-radius: 50px;
+}
+
+header ul li a:hover::after {
+  width: 100%;
+  height: 30%;
+  transition: height 700ms cubic-bezier(0.4, 0, 1, 0.67);
+}
+
+.content {/*CONTAINER podemos usar FLEX*/
+  position: relative;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Estilizando o Texto(descrição) */
+.content .textBox {
+  position: relative;
+  max-width: 600px; /*O texto pode ter no MÁXIMO 600px, mais que isso NÃO PODE*/
+}
+
+/* Estilizando o Titulo do texto */
+.content .textBox h2 {
+  color: #333;
+  font-size: 4em; /*"em" também é definição de size da Fonte*/
+  line-height: 1.4em;
+  font-weight: 500;
+}
+
+.content .textBox h2 span {
+  color: #017143;
+  font-size: 1.2em;
+  font-weight: 900;
+}
+
+.content .textBox p {
+  color: #333;
+}
+
+.content .textBox a {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 8px 20px;
+  background: #017143;
+  color: #fff;
+  border-radius: 40px;
+  font-weight: 500;
+  letter-spacing: 1px;
+  text-decoration: none;
+}
+
+/* Estilizando o container da imagem */
+.content .imgBox {
+  width: 600px;
+  display: flex;
+  justify-content: flex-end;/*A imagem ficará END ou seja na DIREITA*/
+  padding-right: 50px;
+  margin-top: 50px;
+}
+
+/* Estilizando somente a imagem */
+.content .imgBox img {
+  max-width: 340px;
+}
+
+.thumb {
+  position: absolute; /*Erro era o ABSOLUTE*/
+  left: 50%;
+  bottom: 20px;
+  transform: translateX(-50%);
+  display: flex;
+}
+
+.thumb li {
+  list-style: none; /* Tirando o STILO DA LISTA */
+  display: inline-block;
+  margin: 0 20px; /* Separando o ITEMS nas LATERAIS */
+  cursor: pointer;
+  transition: 0.5s;
+}
+
+.thumb li:hover { /* Quando passarmos o MOUSE pelo ITEM o ITEM se levantará Y */
+  transform: translateY(-15%);
+}
+
+.thumb li img {
+  max-width: 60px;
+}
+
+.sci {
+  position: absolute;
+  top: 50%;
+  right: 30px;
+  transform: translateY(-50%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.sci li {
+  list-style: none;
+}
+
+.sci li a {
+  display: inline-block;
+  margin: 5px 0;
+  transform: scale(0.6);
+  filter: invert(1)
+}
+
+.circle { /* BACKGROUND DO SITE TODO */
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #017143;
+  clip-path: circle(600px at right 800px)
+}
+
+
+
+
